@@ -1,0 +1,44 @@
+<ion-menu [content]="content">
+
+  <ion-content>
+
+    <img src="assets/img/logo.jpg" class="menu-logo"/>
+
+    <ion-list>
+      <ion-list-header>
+        Show Tonight
+      </ion-list-header>
+      <button menuClose ion-item (click)="openPage(pages.WelcomePage)">
+        <ion-icon item-left name="bookmark"></ion-icon>
+        Welcome
+      </button>
+      <button menuClose ion-item (click)="openPage(pages.ShowListPage)">
+        <ion-icon item-left name="bonfire"></ion-icon>
+        Shows
+      </button>
+      <button menuClose ion-item (click)="openPage(pages.FavoriteListPage)">
+        <ion-icon item-left name="star"></ion-icon>
+        Favorites
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        Help
+      </ion-list-header>
+      <button menuClose ion-item (click)="openPage(pages.AboutPage)">
+        <ion-icon item-left name="information-circle"></ion-icon>
+        About
+      </button>
+      <button menuClose ion-item (click)="logout()">
+        <ion-icon item-left name="log-out"></ion-icon>
+        Déconnexion
+      </button>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

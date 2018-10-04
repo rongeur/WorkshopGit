@@ -1,0 +1,51 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "show",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "venue": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "string"
+    },
+    "capacity": {
+      "default": "",
+      "type": "integer"
+    },
+    "price": {
+      "default": "",
+      "type": "integer"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "date": {
+      "default": "",
+      "type": "date"
+    },
+    "lat": {
+      "default": "",
+      "type": "float"
+    },
+    "lng": {
+      "default": "",
+      "type": "float"
+    }
+  }
+}
