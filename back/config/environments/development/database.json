@@ -5,7 +5,7 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "host": "hkx-db",
+        "host": "hkx-db-2",
         "srv": false,
         "port": 27017,
         "database": "strapi",
