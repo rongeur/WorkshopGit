@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/songs",
+      "handler": "Song.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/songs/count",
+      "handler": "Song.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/songs/:_id",
+      "handler": "Song.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/songs",
+      "handler": "Song.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/songs/:_id",
+      "handler": "Song.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/songs/:_id",
+      "handler": "Song.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
