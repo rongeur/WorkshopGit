@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "song",
+    "description": "songs to add for musers"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "artist": {
+      "default": "",
+      "type": "string"
+    },
+    "type": {
+      "default": "",
+      "type": "string"
+    },
+    "year": {
+      "default": "",
+      "type": "integer"
+    },
+    "users": {
+      "collection": "user",
+      "via": "song",
+      "plugin": "users-permissions"
+    }
+  }
+}
