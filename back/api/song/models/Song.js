@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `Show` model.
+ * Lifecycle callbacks for the `Song` model.
  */
 
 module.exports = {

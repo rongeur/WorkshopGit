@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Show.js service
+ * Song.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -12,21 +12,21 @@ const _ = require('lodash');
 module.exports = {
 
   /**
-   * Promise to fetch all shows.
+   * Promise to fetch all songs.
    *
    * @return {Promise}
    */
 
   fetchAll: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('show', params);
+    const filters = strapi.utils.models.convertParams('song', params);
     // Select field to populate.
-    const populate = Show.associations
+    const populate = Song.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Show
+    return Song
       .find()
       .where(filters.where)
       .sort(filters.sort)
@@ -36,90 +36,90 @@ module.exports = {
   },
 
   /**
-   * Promise to fetch a/an show.
+   * Promise to fetch a/an song.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = Show.associations
+    const populate = Song.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Show
-      .findOne(_.pick(params, _.keys(Show.schema.paths)))
+    return Song
+      .findOne(_.pick(params, _.keys(Song.schema.paths)))
       .populate(populate);
   },
 
   /**
-   * Promise to count shows.
+   * Promise to count songs.
    *
    * @return {Promise}
    */
 
   count: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('show', params);
+    const filters = strapi.utils.models.convertParams('song', params);
 
-    return Show
+    return Song
       .count()
       .where(filters.where);
   },
 
   /**
-   * Promise to add a/an show.
+   * Promise to add a/an song.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Show.associations.map(ast => ast.alias));
-    const data = _.omit(values, Show.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Song.associations.map(ast => ast.alias));
+    const data = _.omit(values, Song.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await Show.create(data);
+    const entry = await Song.create(data);
 
     // Create relational data and return the entry.
-    return Show.updateRelations({ _id: entry.id, values: relations });
+    return Song.updateRelations({ _id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an show.
+   * Promise to edit a/an song.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Show.associations.map(a => a.alias));
-    const data = _.omit(values, Show.associations.map(a => a.alias));
+    const relations = _.pick(values, Song.associations.map(a => a.alias));
+    const data = _.omit(values, Song.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await Show.update(params, data, { multi: true });
+    const entry = await Song.update(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return Show.updateRelations(Object.assign(params, { values: relations }));
+    return Song.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an show.
+   * Promise to remove a/an song.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = Show.associations
+    const populate = Song.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await Show
+    const data = await Song
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -128,7 +128,7 @@ module.exports = {
     }
 
     await Promise.all(
-      Show.associations.map(async association => {
+      Song.associations.map(async association => {
         const search = _.endsWith(association.nature, 'One') || association.nature === 'oneToMany' ? { [association.via]: data._id } : { [association.via]: { $in: [data._id] } };
         const update = _.endsWith(association.nature, 'One') || association.nature === 'oneToMany' ? { [association.via]: null } : { $pull: { [association.via]: data._id } };
 
@@ -145,22 +145,22 @@ module.exports = {
   },
 
   /**
-   * Promise to search a/an show.
+   * Promise to search a/an song.
    *
    * @return {Promise}
    */
 
   search: async (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('show', params);
+    const filters = strapi.utils.models.convertParams('song', params);
     // Select field to populate.
-    const populate = Show.associations
+    const populate = Song.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    const $or = Object.keys(Show.attributes).reduce((acc, curr) => {
-      switch (Show.attributes[curr].type) {
+    const $or = Object.keys(Song.attributes).reduce((acc, curr) => {
+      switch (Song.attributes[curr].type) {
         case 'integer':
         case 'float':
         case 'decimal':
@@ -184,7 +184,7 @@ module.exports = {
       }
     }, []);
 
-    return Show
+    return Song
       .find({ $or })
       .sort(filters.sort)
       .skip(filters.start)

@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "song",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "default": "",
+      "type": "string"
+    },
+    "Artist": {
+      "default": "",
+      "type": "string"
+    },
+    "Type": {
+      "default": "",
+      "type": "string"
+    },
+    "Year": {
+      "default": "",
+      "type": "integer"
+    },
+    "users": {
+      "collection": "user",
+      "via": "songs",
+      "dominant": true,
+      "plugin": "users-permissions"
+    }
+  }
+}
