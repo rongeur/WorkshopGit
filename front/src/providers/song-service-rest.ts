@@ -29,19 +29,19 @@ export class SongService {
         return Promise.resolve(this.favorites);
     }
 
-    canFavorite(show) {
-        console.log(show);
+    canFavorite(song) {
+        console.log(song);
         console.log(this.favorites);
-        return this.favorites.map(s => s._id).indexOf(show._id) === -1;
+        return this.favorites.map(s => s._id).indexOf(song._id) === -1;
     }
 
-    favorite(show) {
-        this.favorites.push(show);
+    favorite(song) {
+        this.favorites.push(song);
         return Promise.resolve();
     }
 
-    unfavorite(show) {
-        let index = this.favorites.map(s => s._id).indexOf(show._id);
+    unfavorite(song) {
+        let index = this.favorites.map(s => s._id).indexOf(song._id);
         if (index > -1) {
           this.favorites.splice(index, 1);
         }
