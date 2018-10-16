@@ -3,7 +3,7 @@ import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-import {ShowListPage} from '../pages/show-list/show-list';
+import {SongListPage} from '../pages/song-list/song-list';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
@@ -30,7 +30,7 @@ export class MyApp {
             WelcomePage: WelcomePage,
             FavoriteListPage: FavoriteListPage,
             AboutPage: AboutPage,
-            ShowListPage: ShowListPage
+            SongListPage: SongListPage
         }
     }
 
