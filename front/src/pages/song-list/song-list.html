@@ -1,0 +1,28 @@
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)"></ion-searchbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="song-list">
+
+    <ion-list *ngIf="viewMode==='list'">
+
+        <ion-item-sliding *ngFor="let song of songs">
+            <button ion-item>
+                <h2>{{song.Artist}} > {{song.Title}}</h2>
+                <p>{{song.Type}} | {{song.Year}}</p>
+            </button>
+            <ion-item-options>
+                <button danger>Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+</ion-content>
+

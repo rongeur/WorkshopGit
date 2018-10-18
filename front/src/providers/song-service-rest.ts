@@ -3,10 +3,10 @@ import {Http} from '@angular/http';
 import {SERVER_URL} from './config';
 import 'rxjs/Rx';
 
-let showsURL = SERVER_URL + 'shows/';
+let songsURL = SERVER_URL + 'songs/';
 
 @Injectable()
-export class ShowService {
+export class SongService {
   favorites: Array<any> = [];
 
     constructor(public http: Http) {
@@ -14,13 +14,13 @@ export class ShowService {
     }
 
     findAll() {
-        return this.http.get(showsURL)
+        return this.http.get(songsURL)
             .map(res => res.json())
             .toPromise();
     }
 
     findById(id) {
-        return this.http.get(showsURL + id)
+        return this.http.get(songsURL + id)
             .map(res => res.json())
             .toPromise();
     }
@@ -29,19 +29,19 @@ export class ShowService {
         return Promise.resolve(this.favorites);
     }
 
-    canFavorite(show) {
-        console.log(show);
+    canFavorite(song) {
+        console.log(song);
         console.log(this.favorites);
-        return this.favorites.map(s => s._id).indexOf(show._id) === -1;
+        return this.favorites.map(s => s._id).indexOf(song._id) === -1;
     }
 
-    favorite(show) {
-        this.favorites.push(show);
+    favorite(song) {
+        this.favorites.push(song);
         return Promise.resolve();
     }
 
-    unfavorite(show) {
-        let index = this.favorites.map(s => s._id).indexOf(show._id);
+    unfavorite(song) {
+        let index = this.favorites.map(s => s._id).indexOf(song._id);
         if (index > -1) {
           this.favorites.splice(index, 1);
         }

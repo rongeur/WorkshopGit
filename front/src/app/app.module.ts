@@ -5,13 +5,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import {WelcomePage} from '../pages/welcome/welcome';
-import {ShowListPage} from '../pages/show-list/show-list';
-import {ShowDetailPage} from '../pages/show-detail/show-detail';
+import {SongListPage} from '../pages/song-list/song-list';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {LoginPage} from '../pages/login/login';
 import {AboutPage} from '../pages/about/about';
 
-import {ShowService} from "../providers/show-service-rest";
+import {SongService} from "../providers/song-service-rest";
 import {UserService} from "../providers/user-service-rest";
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,8 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     WelcomePage,
     AboutPage,
-    ShowListPage,
-    ShowDetailPage,
+    SongListPage,
     FavoriteListPage,
     LoginPage
   ],
@@ -37,15 +35,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     WelcomePage,
     AboutPage,
-    ShowListPage,
-    ShowDetailPage,
+    SongListPage,
     FavoriteListPage,
     LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    ShowService,
+    SongService,  
     UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

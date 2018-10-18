@@ -47,6 +47,15 @@
       "config": {
         "policies": []
       }
+    },
+
+    {
+      "method": "GET",
+      "path": "/songs/:_id",
+      "handler": "Song.destroy",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

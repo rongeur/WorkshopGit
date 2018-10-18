@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ShowService} from '../../providers/show-service-rest';
-import {ShowDetailPage} from '../show-detail/show-detail';
+import {SongService} from '../../providers/song-service-rest';
 import {SERVER_URL} from '../../providers/config';
 
 @Component({
@@ -13,16 +12,12 @@ export class FavoriteListPage {
     favorites: Array<any>;
     serverUrl: string = SERVER_URL;
 
-    constructor(public navCtrl: NavController, public service: ShowService) {
+    constructor(public navCtrl: NavController, public service: SongService) {
         this.getFavorites();
     }
 
-    itemTapped(show) {
-        this.navCtrl.push(ShowDetailPage, show);
-    }
-
-    deleteItem(show) {
-        this.service.unfavorite(show)
+    deleteItem(song) {
+        this.service.unfavorite(song)
             .then(() => {
                 this.getFavorites();
             })
