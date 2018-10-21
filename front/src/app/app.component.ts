@@ -4,7 +4,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {SongListPage} from '../pages/song-list/song-list';
-import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
+import {MusersListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
 import {LoginPage} from '../pages/login/login';
@@ -28,7 +28,7 @@ export class MyApp {
         this.initializeApp();
         this.pages = {
             WelcomePage: WelcomePage,
-            FavoriteListPage: FavoriteListPage,
+            MusersListPage: MusersListPage,
             AboutPage: AboutPage,
             SongListPage: SongListPage
         }

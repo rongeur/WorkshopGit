@@ -4,8 +4,8 @@ import {SongService} from '../../providers/song-service-rest';
 import {SERVER_URL} from '../../providers/config';
 
 @Component({
-    selector: 'page-Musers-list',
-    templateUrl: 'Musers-List.html'
+    selector: 'page-favorite-list',
+    templateUrl: 'favorite-list.html'
 })
 export class MusersListPage {
 

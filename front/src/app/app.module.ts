@@ -6,7 +6,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {SongListPage} from '../pages/song-list/song-list';
-import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
+import {MusersListPage} from '../pages/favorite-list/favorite-list';
 import {LoginPage} from '../pages/login/login';
 import {AboutPage} from '../pages/about/about';
 
