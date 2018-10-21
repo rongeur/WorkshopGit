@@ -11,11 +11,7 @@
     <ion-list>
         <ion-item-sliding *ngFor="let song of favorites">
             <button ion-item (click)="itemTapped(song)">
-                <ion-thumbnail item-left>
-                    <img src="{{serverUrl}}{{song.image.url}}"/>
-                </ion-thumbnail>
-                <h2>{{song.name}}</h2>
-                <p>{{song.date | date: 'd MMMM yyyy' }} ∙ {{song.venue}}</p>
+                <h2>{{user.Username}}</h2>
             </button>
             <ion-item-options>
                 <button danger (click)="deleteItem(song)">Delete</button>
