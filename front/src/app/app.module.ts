@@ -22,7 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WelcomePage,
     AboutPage,
     SongListPage,
-    FavoriteListPage,
+    MusersListPage,
     LoginPage
   ],
   imports: [
@@ -36,7 +36,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WelcomePage,
     AboutPage,
     SongListPage,
-    FavoriteListPage,
+    MusersListPage,
     LoginPage
   ],
   providers: [
