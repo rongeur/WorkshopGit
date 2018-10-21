@@ -4,10 +4,10 @@ import {SongService} from '../../providers/song-service-rest';
 import {SERVER_URL} from '../../providers/config';
 
 @Component({
-    selector: 'page-favorite-list',
-    templateUrl: 'favorite-list.html'
+    selector: 'page-Musers-list',
+    templateUrl: 'Musers-List.html'
 })
-export class FavoriteListPage {
+export class MusersListPage {
 
     favorites: Array<any>;
     serverUrl: string = SERVER_URL;
