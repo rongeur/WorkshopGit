@@ -75,4 +75,25 @@ module.exports = {
   destroy: async (ctx, next) => {
     return strapi.services.song.remove(ctx.params);
   }
+
+  /**
+   * Find potential musers.
+   *
+   * @return {Object}
+   */
+
+  /*findMusers: async (ctx, nbmusic) => {
+    
+    MusersList = {}
+    for user in users :
+      count = 0
+      for  music in usermusiclist :
+        if music is in mymusic :
+          count ++
+      if count > nbmusic  :
+        MusersList.add(user)
+
+    // return MusersList
+    return strapi.services.song.remove(ctx.params);
+  }*/
 };

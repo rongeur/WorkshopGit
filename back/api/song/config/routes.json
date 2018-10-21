@@ -56,6 +56,15 @@
       "config": {
         "policies": []
       }
+    },
+
+    {
+      "method": "GET",
+      "path": "/songs/:_id",
+      "handler": "Song.findMusers",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
