@@ -27,8 +27,8 @@
     },
     "users": {
       "collection": "user",
-      "via": "songs",
       "dominant": true,
+      "via": "songs",
       "plugin": "users-permissions"
     }
   }

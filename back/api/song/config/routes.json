@@ -51,16 +51,7 @@
 
     {
       "method": "GET",
-      "path": "/songs/:_id",
-      "handler": "Song.destroy",
-      "config": {
-        "policies": []
-      }
-    },
-
-    {
-      "method": "GET",
-      "path": "/songs/:_id",
+      "path": "/musers/:userId",
       "handler": "Song.findMusers",
       "config": {
         "policies": []
