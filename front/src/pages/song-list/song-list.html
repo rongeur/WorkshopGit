@@ -15,6 +15,7 @@
 
         <ion-item-sliding *ngFor="let song of songs">
             <button ion-item>
+                    <img src={{song.photo}}>
                 <h2>{{song.Artist}} > {{song.Title}}</h2>
                 <p>{{song.Type}} | {{song.Year}}</p>
             </button>
