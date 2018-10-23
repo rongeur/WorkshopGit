@@ -47,15 +47,6 @@
       "config": {
         "policies": []
       }
-    },
-
-    {
-      "method": "GET",
-      "path": "/musers/:userId",
-      "handler": "Song.findMusers",
-      "config": {
-        "policies": []
-      }
     }
   ]
 }

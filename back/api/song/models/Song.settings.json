@@ -23,13 +23,7 @@
     },
     "Year": {
       "default": "",
-      "type": "integer"
-    },
-    "users": {
-      "collection": "user",
-      "dominant": true,
-      "via": "songs",
-      "plugin": "users-permissions"
+      "type": "string"
     }
   }
 }

@@ -44,10 +44,6 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
-    },
-    "songs": {
-      "collection": "song",
-      "via": "users"
     }
   }
 }
