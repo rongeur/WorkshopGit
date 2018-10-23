@@ -72,7 +72,7 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = Song | createSongPayload | updateSongPayload | deleteSongPayload | SongConnection | SongAggregator | SongGroupBy | SongConnection_id | SongConnectionCreatedAt | SongConnectionUpdatedAt | SongConnectionTitle | SongConnectionArtist | SongConnectionType | SongConnectionYear | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = Song | createSongPayload | updateSongPayload | deleteSongPayload | SongConnection | SongAggregator | SongGroupBy | SongConnection_id | SongConnectionCreatedAt | SongConnectionUpdatedAt | SongConnectionTitle | SongConnectionArtist | SongConnectionType | SongConnectionYear | SongConnectionPhoto | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
   createSong(input: createSongInput): createSongPayload
@@ -127,6 +127,7 @@ type Song {
   Artist: String
   Type: String
   Year: String
+  Photo: UploadFile
 }
 
 type SongAggregator {
@@ -151,6 +152,11 @@ type SongConnectionArtist {
 
 type SongConnectionCreatedAt {
   key: DateTime
+  connection: SongConnection
+}
+
+type SongConnectionPhoto {
+  key: ID
   connection: SongConnection
 }
 
@@ -182,6 +188,7 @@ type SongGroupBy {
   Artist: [SongConnectionArtist]
   Type: [SongConnectionType]
   Year: [SongConnectionYear]
+  Photo: [SongConnectionPhoto]
 }
 
 input SongInput {
@@ -189,6 +196,7 @@ input SongInput {
   Artist: String
   Type: String
   Year: String
+  Photo: ID
 }
 
 input updateRoleInput {

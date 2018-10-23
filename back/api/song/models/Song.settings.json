@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "song",
   "info": {
     "name": "song",
     "description": ""
@@ -24,6 +24,12 @@
     "Year": {
       "default": "",
       "type": "string"
+    },
+    "Photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }
