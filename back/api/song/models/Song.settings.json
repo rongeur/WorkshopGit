@@ -23,13 +23,13 @@
     },
     "Year": {
       "default": "",
-      "type": "string"
+      "type": "integer"
     },
-    "Photo": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload",
-      "required": false
+    "users": {
+      "collection": "user",
+      "dominant": true,
+      "via": "songs",
+      "plugin": "users-permissions"
     }
   }
 }
